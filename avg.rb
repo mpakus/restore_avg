@@ -11,8 +11,8 @@ class Array
     if res.average != avg
       diff = (res.average - avg)    
       res.map! { |el| (el - diff).round(precision) }
-    elsif precision != 2
-      res.map! { |el| el.round(precision) }      
+    else
+      res.map! { |el| el.round(precision) } if precision != 3
     end
     return res
   end
